@@ -59,7 +59,7 @@ createApp({
         prev() {
             this.active--
             if (this.active < 0) {
-                this.active = this.slides.length-1
+                this.active = this.slides.length - 1
             }
         },
         next() {
@@ -68,5 +68,11 @@ createApp({
                 this.active = 0
             }
         },
+        autoSlide() {
+            setInterval(console.log('hi'), 1000)
+        },
+    },
+    mounted() {
+        setInterval(this.next, 3000)
     },
 }).mount('#app')
