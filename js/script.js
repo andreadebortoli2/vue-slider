@@ -53,6 +53,7 @@ createApp({
                 }
             ],
             active: 0,
+            pause: false,
         }
     },
     methods: {
@@ -68,11 +69,11 @@ createApp({
                 this.active = 0
             }
         },
-        autoSlide() {
-            setInterval(console.log('hi'), 1000)
-        },
+        autoPlay() {
+            this.pause === false ? this.next() : ''
+        }
     },
     mounted() {
-        setInterval(this.next, 3000)
+        setInterval(this.autoPlay, 3000)
     },
 }).mount('#app')
