@@ -21,9 +21,7 @@
                         <img :src="slide.image" :alt="slide.title" />
                         <div class="text">
                             <h3>{{slide.title}}</h3>
-                            <p>
-                                {{slide.text}}
-                            </p>
+                            <p>{{slide.text}}</p>
                         </div>
                     </div>
                 </template>
@@ -31,9 +29,9 @@
                 <div class="thumbs">
                     <div class="prev" @click="prev()"></div>
                     <div class="next" @click="next()"></div>
-                    <template  v-for="(slide,index) in slides">
+                    <template v-for="(slide,index) in slides">
                         <div class="thumb" :class="{active: index === active}">
-                            <img :src="slide.image" :alt="slide.title"  @click="active = index"/>
+                            <img :src="slide.image" :alt="slide.title" @click="active = index" />
                         </div>
                     </template>
                 </div>

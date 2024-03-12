@@ -54,26 +54,22 @@ createApp({
             ],
             active: 0,
             pause: false,
-        }
+        };
     },
     methods: {
         prev() {
-            this.active--
-            if (this.active < 0) {
-                this.active = this.slides.length - 1
-            }
+            this.active--;
+            this.active < 0 ? this.active = this.slides.length - 1 : '';
         },
         next() {
-            this.active++
-            if (this.active === this.slides.length) {
-                this.active = 0
-            }
+            this.active++;
+            this.active === this.slides.length ? this.active = 0 : '';
         },
         autoPlay() {
-            this.pause === false ? this.next() : ''
-        }
+            this.pause === false ? this.next() : '';
+        },
     },
     mounted() {
-        setInterval(this.autoPlay, 3000)
+        setInterval(this.autoPlay, 3000);
     },
-}).mount('#app')
+}).mount('#app');
